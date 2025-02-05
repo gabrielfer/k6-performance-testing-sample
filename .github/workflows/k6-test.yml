@@ -1,0 +1,29 @@
+name: K6 Performance Tests sample
+
+on:
+  push: 
+    branches: 
+      - master
+  pull-requests: 
+    branches: 
+      - master
+
+jobs: 
+  k6-test:
+    run-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+      - uses: actions/checkout@v2
+
+      - name: Set up Node.js
+      - uses: actions/setup-node@v2
+        with: 
+          node-version: 23
+      
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run k6 performance tests
+        run: |
+          npm run test:all
