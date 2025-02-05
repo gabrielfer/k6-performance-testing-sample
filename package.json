@@ -1,0 +1,20 @@
+{
+  "name": "k6-performance-testing-sample",
+  "version": "1.0.0",
+  "description": "A project to explore k6 for performance testing",
+  "main": "index.js",
+  "scripts": {
+    "test:single": "node src/scripts/run-single-test.js", 
+    "test:all": "node src/scripts/run-all-tests.js"
+  },
+  "devDependencies": {
+    "k6": "^0.46.0"
+  },
+  "keywords": [
+    "k6",
+    "performance",
+    "load-testing"
+  ],
+  "author": "Gabriel Fernandes",
+  "license": "MIT"
+}
