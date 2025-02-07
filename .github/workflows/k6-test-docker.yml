@@ -1,0 +1,21 @@
+name: Run k6 Tests in Docker
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  k6-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Build Docker image for k6 tests
+        run: docker build -t k6-test .
+
+      - name: Run k6 tests using Docker
+        run: docker run --rm k6-test
