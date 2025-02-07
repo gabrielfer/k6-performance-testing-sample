@@ -2,9 +2,9 @@ name: Run k6 Tests in Docker
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   k6-tests:
